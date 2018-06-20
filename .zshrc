@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/students_home/old_students/cs20161074/.oh-my-zsh
+  export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -18,19 +18,8 @@ alias la='ls -al'
 
 alias vi='vim'
 
-export PATH=$PATH:/home/cse221/bin
-export PATH=$PATH:~/local/bin
-
-export PATH=$PATH:~/2018-Spring-OS/2018-OS-Spring-Project2/src/utils
-
 # For 256 color in tmux
 alias tmux='tmux -2'
-
-export PYTHONHOME=/opt/python/3.6.4
-export PYTHONPATH=${PYTHONHOME}/lib/python3.6/site-packages:$PYTHONPATH
-export PATH=${PYTHONHOME}/bin:$PATH
-export LD_LIBRARY_PATH=${PYTHONHOME}/lib:$LD_LIBRARY_PATH
-
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
