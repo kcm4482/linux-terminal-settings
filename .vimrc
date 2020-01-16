@@ -1,3 +1,4 @@
+
 ".vimrc for basic setting
 set number
 set nocompatible
@@ -12,6 +13,7 @@ set incsearch
 set encoding=utf-8
 set mouse=a
 let mapleader=","
+set backspace=indent,eol,start
 
 syntax on
 filetype indent on
@@ -50,7 +52,7 @@ map <Leader>c<space> <plug>NERDComComment
 
 
 "" Custom Keyboard Shortcuts
-map <F1> :NERDTree<CR>
+map <F1> :NERDTreeToggle<CR>
 " Toggle paste mode
 nnoremap <F2> :set invpaste paste?<CR>
 " Compile this code
@@ -81,7 +83,7 @@ function Compile()
     let a = &filetype
     echom a
     if a == "cpp"
-        :!g++ -std=c++11 % -o %:r
+        :!g++ -std=c++14 % -o %:r
     elseif a == "c"
         :!gcc % -o %:r
     elseif a == "java"
@@ -126,36 +128,37 @@ function InputRun()
 endfunction
 
 
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+" vim-plug Plugin List
+call plug#begin()
 
 " NerdTree
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 
 " 자동 괄호 짝맞추기
-Plugin 'auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 
 " 자동 완성
-Plugin 'AutoComplPop'
+" Plug 'valloric/youcompleteme'
+
+Plug 'vim-scripts/AutoComplPop'
 
 " 자동 주석처리
-Plugin 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdcommenter'
 
 " 색상 테마 변경
-Plugin 'nanotech/jellybeans.vim'
+Plug 'nanotech/jellybeans.vim'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+Plug 'sheerun/vim-polyglot'
+
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
+
+Plug 'liuchengxu/vista.vim'
+Plug '~/.fzf'
+Plug 'junegunn/fzf.vim'
+
+call plug#end()
+
 
 " Plugin 'nanotech/jellybeans.vim' 필요
 colorscheme jellybeans
